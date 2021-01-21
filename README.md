@@ -1,7 +1,7 @@
-# hoppingBlogService
+# ShoppingBlogService
 
 ## Description
-Blog Microservice.<br>
+Shopping Blog Microservice.<br>
 This Microservice built in Java using SpringBoot framework, with Gradle build tools.
 
 
