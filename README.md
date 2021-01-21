@@ -1,7 +1,7 @@
-# ReactiveShoppingBlogService
+# hoppingBlogService
 
 ## Description
-Reactive Blog Microservice.<br>
+Blog Microservice.<br>
 This Microservice built in Java using SpringBoot framework, with Gradle build tools.
 
 
@@ -17,22 +17,22 @@ Product Microservice API:
 			<td> /blog</td>
 			<td>An action that receives a user's post about a product and saves it in the database.
 				Users can post posts without a quantity limit and that each post pertains to a specific product.
-				This action returns Mono.</td>
+				This action returns blog.</td>
 		</tr>
 		<tr>
 			<td><b>GET</b></td>
 			<td> /blog/byUser/{email}?sortBy={sortArrt}&sortOrder={order} </td>
-			<td>An action that returns sorted  Flux with all posts posted by a specific user.</td>
+			<td>An action that returns sorted array with all posts posted by a specific user.</td>
 		</tr>
 		<tr>
 			<td><b><b>GET</b></b></td>
 			<td>/blog/byUser/{email}?filterType=byLanguage&filterValue={language}&sortBy={sortArrt}&sortOrder={order}</td>
-			<td>An action that returns sorted Flux of all posts posted by a specific user, written in the language defined in the URL.</td>
+			<td>An action that returns sorted array of all posts posted by a specific user, written in the language defined in the URL.</td>
 		</tr>
 		<tr>
 			<td><b>GET</b></td>
 			<td>/blog/byUser/{email}?filterType=byCreation&filterValue={timeEnum}&sortBy={sortArrt}&sortOrder={order}</td>
-			<td>An action that returns a sorted Flux of all posts posted by a specific user, posted at a specific time.<br>
+			<td>An action that returns a sorted array of all posts posted by a specific user, posted at a specific time.<br>
 				timeEnum can have one of the following values:<br>
 				lastDay - will return posts published in the last 24 hours.<br>
 				lastWeek - will return posts published in the last week.<br>
@@ -41,37 +41,37 @@ Product Microservice API:
 		<tr>
 			<td><b>GET</b></td>
 			<td>/blog/byUser/{email}?filterType=byProduct&filterValue={productId}&sortBy={sortArrt}&sortOrder={order} </td>
-			<td>An action that returns a sorted Flux of all posts posted by a specific user on a specific product, whose identifier is defined in the URL.</td>
+			<td>An action that returns a sorted array of all posts posted by a specific user on a specific product, whose identifier is defined in the URL.</td>
 		</tr>
 		<tr>
 			<td><b>GET</b></td>
 			<td> /blog/byProduct/{productId}?sortBy={sortArrt}&sortOrder={order</td>
-			<td>An action that returns all the posts on a specific product, that returns a sorted Flux.</td>
+			<td>An action that returns all the posts on a specific product, that returns a sorted array.</td>
 		</tr>
 		<tr>
 			<td><b>GET</b></td>
 			<td>/blog/byProduct/{productId}?filterType=byLanguage&filterValue={language}&sortBy={sortArrt}&sortOrder={order} </td>
-			<td>An action that returns a sorted Flux of all posts on a specific product, written in the language defined in the URL.</td>
+			<td>An action that returns a sorted array of all posts on a specific product, written in the language defined in the URL.</td>
 		</tr>
     <tr>
 			<td><b>GET</b></td>
 			<td> /blog/byProduct/{productId}?filterType=byCreation&filterValue={timeEnum}&sortBy={sortArrt}&sortOrder={order}</td>
-			<td>An action that returns a sorted Flux of all posts on a specific product, published at a particular date.</td>
+			<td>An action that returns a sorted array of all posts on a specific product, published at a particular date.</td>
 		</tr>   
     <tr>
 			<td><b>GET</b></td>
 			<td>/blog?filterType=byCreation&filterValue={timeEnum}&sortBy={sortArrt}&sortOrder={order}</td>
-			<td>An action that returns a sorted Flux of all posts posted at a specific time.</td>
+			<td>An action that returns a sorted array of all posts posted at a specific time.</td>
 		</tr>
 	  <tr>
 			<td><b>GET</b></td>
 			<td>/blog?filterType=byCount&filterValue={postsCount}/td>
-			<td>An action that returns a sorted Flux of a certain number of recent posts posted on the service. The maximum number of posts that the service needs to 				return will be set in the postsCount variable.</td>
+			<td>An action that returns a sorted array of a certain number of recent posts posted on the service. The maximum number of posts that the service needs to 				return will be set in the postsCount variable.</td>
 		</tr>
     <tr>
 			<td><b>DELETE</b></td>
 			<td>/blog</td>
-			<td>An action that deletes all product posts and returns empty Mono.</td>
+			<td>An action that deletes all product posts only for testing.</td>
 		</tr>
 
 </table>
