@@ -53,8 +53,10 @@ public class ShoppingBlogServiceWithDb implements ShoppingBlogService {
 		if (!this.validator.validateEmail(email)) {
 			throw new InvalidEmailException("Email must be in the format of example@example.com");
 		}
-		return this.posts.findAll(PageRequest.of(page, size, sortOrder ? Direction.ASC : Direction.DESC, sortAttr))
-				.getContent().stream().map(this.converter::fromEntity).collect(Collectors.toList());
+		return this.posts
+				.findAllByUser_Email(email,
+						PageRequest.of(page, size, sortOrder ? Direction.ASC : Direction.DESC, sortAttr))
+				.stream().map(this.converter::fromEntity).collect(Collectors.toList());
 	}
 
 	@Override
@@ -147,7 +149,8 @@ public class ShoppingBlogServiceWithDb implements ShoppingBlogService {
 		if (!((filterValue != null) && (filterValue.matches("\\d*")))) {
 			throw new BadTypeFilterValueException("Filter value should be only digits");
 		}
-		return this.posts.findAll(PageRequest.of(page, size, sortOrder ? Direction.ASC : Direction.DESC, sortAttr))
+		return this.posts.findAll(
+				PageRequest.of(0, Integer.parseInt(filterValue), sortOrder ? Direction.ASC : Direction.DESC, sortAttr))
 				.stream().map(this.converter::fromEntity).collect(Collectors.toList());
 	}
 
